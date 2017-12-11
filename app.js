@@ -64,6 +64,9 @@ $(() => {
   let playerTwoName = null;
   const playerTwoBoard = [];
   const playerOneBoard = [];
+  const scores = [];
+  let playerTurn = null;
+  let winner = null;
 
   const $twoPlayerBtn = $('.multiplayerModeButton');
   const $playerOneForm = $('.playerOneName');
@@ -72,6 +75,9 @@ $(() => {
   const $playerTwoSubmitBtn = $('#playerTwoSubmit');
   const $instructionsBoard = $('.instructionsBoard');
   const $selectButton = $('.selectButton');
+  const $playerOneScoreboard = $('.playerOneScore');
+  const $playerTwoScoreboard = $('.playerTwoScore');
+  const $winner = $('.winner');
 
 
 
@@ -328,6 +334,7 @@ $(() => {
   }
 
   function firstGame(){
+    playerTurn = 0;
     $selectButton.off('click', firstGame);
     $instructionsBoard.hide();
     $selectButton.hide();
@@ -364,8 +371,36 @@ $(() => {
     totalSeconds--;
     $minutes.text('0');
     $seconds.html(pad(totalSeconds%60));
-    // $seconds.html(pad(totalSeconds%60));
-    // $minutes.html(pad(parseInt(totalSeconds/60)));
+    if (totalSeconds === 0){
+      stopCountdownTimer();
+      console.log('Time is up!');
+      const $numberLightsOn = $('.on').length;
+      scores[playerTurn] = calculateScore(numberMoves, $numberLightsOn, 0);
+      console.log(scores);
+
+      if (playerTurn === 0){
+        $squares.off('click', getSquareIdMulti);
+        const $lightsOn = $('.on');
+        $lightsOn.removeClass('on');
+        $instructionsBoard.html(`${playerTwoName}, are you ready?`);
+        $selectButton.html('Go!');
+        $instructionsBoard.show();
+        $selectButton.show();
+        $selectButton.on('click', secondGame);
+      } else {
+        displayScores();
+      }
+
+
+    }
+  }
+
+  function calculateScore(numberOfMoves, numberOfLightsRemaining, timeRemaining){
+    const movesScore = 15 - numberOfMoves;
+    const lightsScore = 15 - numberOfLightsRemaining;
+    const timeScore = timeRemaining + 1;
+
+    return (movesScore * lightsScore * timeScore);
   }
 
   function squaresClickableMulti(){
@@ -402,7 +437,7 @@ $(() => {
     if ($numberLightsOn === 0){
       console.log('Finished!');
       $squares.off('click', getSquareIdMulti);
-      const $lightsOn = $('.on');     // just added this and below
+      const $lightsOn = $('.on');
       $lightsOn.removeClass('on');
       stopCountdownTimer();
       $instructionsBoard.html(`${playerTwoName}, are you ready?`);
@@ -410,10 +445,12 @@ $(() => {
       $instructionsBoard.show();
       $selectButton.show();
       $selectButton.on('click', secondGame);
+      scores[0] = calculateScore(numberMoves, $numberLightsOn, totalSeconds);
     }
   }
 
   function secondGame(){
+    playerTurn = 1;
     $instructionsBoard.hide();
     $selectButton.hide();
     numberMoves = 0;
@@ -471,7 +508,27 @@ $(() => {
       console.log('Second game finished!');
       $squares.off('click', getSquareIdMulti);
       stopCountdownTimer();
+      scores[1] = calculateScore(numberMoves, $numberLightsOn, totalSeconds);
+      displayScores();
     }
+  }
+
+  function displayScores(){
+    $playerOneScoreboard.html(`${playerOneName}, your score is ${scores[0]}.`);
+    $playerTwoScoreboard.html(`${playerTwoName}, your score is ${scores[1]}.`);
+    displayWinner();
+  }
+
+  function displayWinner(){
+    if (scores[0] > scores[1]){
+      winner = `${playerOneName}`;
+    } else if (scores[0] < scores[1]){
+      winner = `${playerOneName}`;
+    } else {
+      return $winner.html("It's a draw!");
+    }
+
+    $winner.html(`${winner}, you are the winner!`);
   }
 
 
