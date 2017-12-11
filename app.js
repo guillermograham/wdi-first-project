@@ -69,6 +69,7 @@ $(() => {
   const $playerOneSubmitBtn = $('#playerOneSubmit');
   const $playerTwoForm = $('.playerTwoName');
   const $playerTwoSubmitBtn = $('#playerTwoSubmit');
+  const $instructionsBoard = $('.instructionsBoard');
 
 
 
@@ -242,17 +243,11 @@ $(() => {
   function getPlayerOneName() {
     $playerOneForm.attr('id', 'playerOneNameActivated');
     $playerOneSubmitBtn.on('click', playerOneNameSubmit);
-    console.log(playerOneName);
-
-
-
   }
 
   function getPlayerTwoName() {
-    console.log('SHOWING player 2 form');
     $playerTwoForm.attr('id', 'playerTwoNameActivated');
     $playerTwoSubmitBtn.on('click', playerTwoNameSubmit);
-    console.log(playerOneName);
 
 
   }
@@ -268,7 +263,12 @@ $(() => {
     e.preventDefault();
     playerTwoName = $('#GET-name-playerTwo').val();
     $playerTwoForm.hide();
-    console.log(playerTwoName);
+    playerOneSelect();
+  }
+
+  function playerOneSelect(){
+    $instructionsBoard.show();
+    $instructionsBoard.html(`${playerOneName}, please create the game for ${playerTwoName}.`);
   }
 
 

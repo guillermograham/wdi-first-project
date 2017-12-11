@@ -66,6 +66,11 @@ h1 {
   display: none;
 }
 
+.instructionsBoard {
+  display: none;
+  width: 700px;
+}
+
 #activate {
   display: inline-block;
 }
