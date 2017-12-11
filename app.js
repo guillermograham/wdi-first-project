@@ -34,7 +34,6 @@ $(() => {
 
   };
 
-  let currentLevel = null;
   let levelCount = null;
   const levels = [
     [23, 25, 27],
@@ -319,7 +318,160 @@ $(() => {
     $squares.off('click', selectSquare);
     const $selectedSquares = $('.selected');
     $selectedSquares.removeClass('selected');
+    playerOneReady();
+  }
 
+  function playerOneReady(){
+    $instructionsBoard.html(`${playerOneName}, are you ready?`);
+    $selectButton.html('Go!');
+    $selectButton.on('click', firstGame);
+  }
+
+  function firstGame(){
+    $selectButton.off('click', firstGame);
+    $instructionsBoard.hide();
+    $selectButton.hide();
+    numberMoves = 0;
+    for (let i = 0; i < playerOneBoard.length; i++){
+      $(`#${playerOneBoard[i]}`).toggleClass('on');
+    }
+    $movesCounter.attr('id', 'movesCounterActivated');
+    $movesNumber.html(numberMoves);
+    totalSeconds = 60;
+    $timer.attr('id', 'timerActivated');
+    $minutes.text('1');
+    $seconds.text('00');
+
+    squaresClickableMulti();
+
+    // change these
+    $startButton.off('click', startUp);
+    $stopButton.on('click', stop);
+
+    startCountdownTimer();
+
+  }
+
+  function startCountdownTimer(){
+    clockTimer = setInterval(setCountdown, 1000);
+  }
+
+  function stopCountdownTimer(){
+    clearInterval(clockTimer);
+  }
+
+  function setCountdown(){
+    totalSeconds--;
+    $minutes.text('0');
+    $seconds.html(pad(totalSeconds%60));
+    // $seconds.html(pad(totalSeconds%60));
+    // $minutes.html(pad(parseInt(totalSeconds/60)));
+  }
+
+  function squaresClickableMulti(){
+    return $squares.on('click', getSquareIdMulti);
+  }
+
+  function getSquareIdMulti (e){
+    const squareId = $(e.target).attr('id');
+    numberMoves++;
+    getNeighboursMulti(squareId);
+    $movesNumber.html(numberMoves);
+  }
+
+  function getNeighboursMulti (current){
+    const top = powers[current]['top'];
+    const right = powers[current]['right'];
+    const bottom = powers[current]['bottom'];
+    const left = powers[current]['left'];
+
+    toggleClassMulti(current, top, right, bottom, left);
+  }
+
+  function toggleClassMulti (squareId, top, right, bottom, left){
+    $(`#${squareId}`).toggleClass('on');
+    $(`#${top}`).toggleClass('on');
+    $(`#${right}`).toggleClass('on');
+    $(`#${bottom}`).toggleClass('on');
+    $(`#${left}`).toggleClass('on');
+    checkNumberMulti();
+  }
+
+  function checkNumberMulti(){
+    const $numberLightsOn = $('.on.inner').length;
+    if ($numberLightsOn === 0){
+      console.log('Finished!');
+      $squares.off('click', getSquareIdMulti);
+      const $lightsOn = $('.on');     // just added this and below
+      $lightsOn.removeClass('on');
+      stopCountdownTimer();
+      $instructionsBoard.html(`${playerTwoName}, are you ready?`);
+      $selectButton.html('Go!');
+      $instructionsBoard.show();
+      $selectButton.show();
+      $selectButton.on('click', secondGame);
+    }
+  }
+
+  function secondGame(){
+    $instructionsBoard.hide();
+    $selectButton.hide();
+    numberMoves = 0;
+    for (let i = 0; i < playerTwoBoard.length; i++){
+      $(`#${playerTwoBoard[i]}`).toggleClass('on');
+    }
+    $movesCounter.attr('id', 'movesCounterActivated');
+    $movesNumber.html(numberMoves);
+    totalSeconds = 60;
+    $timer.attr('id', 'timerActivated');
+    $minutes.text('1');
+    $seconds.text('00');
+
+    squaresClickableMultiSecondGame();
+
+    // change these
+    $startButton.off('click', startUp);
+    $stopButton.on('click', stop);
+
+    startCountdownTimer();
+  }
+
+  function squaresClickableMultiSecondGame(){
+    return $squares.on('click', getSquareIdMultiSecondGame);
+  }
+
+  function getSquareIdMultiSecondGame (e){
+    const squareId = $(e.target).attr('id');
+    numberMoves++;
+    getNeighboursMultiSecondGame(squareId);
+    $movesNumber.html(numberMoves);
+  }
+
+  function getNeighboursMultiSecondGame (current){
+    const top = powers[current]['top'];
+    const right = powers[current]['right'];
+    const bottom = powers[current]['bottom'];
+    const left = powers[current]['left'];
+
+    toggleClassMultiSecondGame(current, top, right, bottom, left);
+  }
+
+  function toggleClassMultiSecondGame (squareId, top, right, bottom, left){
+    $(`#${squareId}`).toggleClass('on');
+    $(`#${top}`).toggleClass('on');
+    $(`#${right}`).toggleClass('on');
+    $(`#${bottom}`).toggleClass('on');
+    $(`#${left}`).toggleClass('on');
+    checkNumberMultiSecondGame();
+  }
+
+  function checkNumberMultiSecondGame(){
+    const $numberLightsOn = $('.on.inner').length;
+    if ($numberLightsOn === 0){
+      console.log('Second game finished!');
+      $squares.off('click', getSquareIdMulti);
+      stopCountdownTimer();
+    }
   }
 
 
