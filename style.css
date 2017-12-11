@@ -1,0 +1,63 @@
+body {
+  text-align: center;
+  font-family: Arial, Helvetica, san-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+.grid {
+  width: 700px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.grid li {
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin: 0;
+  padding: 0;
+  /*border: 1px solid black;*/
+  box-sizing: border-box;
+}
+
+.inner {
+  border: 1px solid black;
+}
+
+.on.inner {
+  background-color: yellow;
+}
+
+.edge {
+  background-color: white;
+  border: 1px solid white;
+  color: white;
+}
+
+.nextLevelButton {
+  display: none;
+}
+
+.movesCounter {
+  display: none;
+}
+
+.timer {
+  display: none;
+}
+
+#activate {
+  display: inline-block;
+}
+
+#movesCounterActivated {
+  display: inline-block;
+}
+
+#timerActivated {
+  display: block;
+}
