@@ -52,11 +52,27 @@ $(() => {
   const $squares = $('.inner');
   const $startButton = $('#startButton');
   const $resetButton = $('#resetButton');
+  const $stopButton = $('.stopButton');
   const $movesCounter = $('.movesCounter');
   const $movesNumber = $('#moveCount');
   const $timer = $('.timer');
   let $minutes = $('#minutes');
   let $seconds = $('#seconds');
+
+
+  // MULTIPLAYER VARIABLES
+  let playerOneName = null;
+  let playerTwoName = null;
+
+  const $twoPlayerBtn = $('.multiplayerModeButton');
+  const $playerOneForm = $('.playerOneName');
+  const $playerOneSubmitBtn = $('#playerOneSubmit');
+  const $playerTwoForm = $('.playerTwoName');
+  const $playerTwoSubmitBtn = $('#playerTwoSubmit');
+
+
+
+
 
   function getSquareId (e){
     const squareId = $(e.target).attr('id');
@@ -97,6 +113,8 @@ $(() => {
     $seconds.text(totalSeconds);
     totalMinutes = 0;
     totalSeconds = 0;
+    $startButton.off('click', startUp);
+    $stopButton.on('click', stop);
     startTimer();
     squaresClickable();
     resetButtonActivate();
@@ -195,8 +213,63 @@ $(() => {
     squaresClickable();
   }
 
+  function stop(){
+    numberMoves = 0;
+    $movesNumber.html(numberMoves);
+    stopTimer();
+    deactivateResetButton();
+    $squares.off('click', getSquareId);
+    const $lightsOn = $('.on');
+    $lightsOn.removeClass('on');
+    totalMinutes = '00';
+    totalSeconds = '00';
+    $minutes.text(totalMinutes);
+    $seconds.text(totalSeconds);
+    clockTimer;
+    levelCount = null;
+    $startButton.on('click', startUp);
+    $stopButton.off('click', stop);
+  }
+
 
   $startButton.on('click', startUp);
+  $twoPlayerBtn.on('click', getPlayerOneName);
+
+
+
+  // MULTIPLAYER MODE
+
+  function getPlayerOneName() {
+    $playerOneForm.attr('id', 'playerOneNameActivated');
+    $playerOneSubmitBtn.on('click', playerOneNameSubmit);
+    console.log(playerOneName);
+
+
+
+  }
+
+  function getPlayerTwoName() {
+    console.log('SHOWING player 2 form');
+    $playerTwoForm.attr('id', 'playerTwoNameActivated');
+    $playerTwoSubmitBtn.on('click', playerTwoNameSubmit);
+    console.log(playerOneName);
+
+
+  }
+
+  function playerOneNameSubmit(e){
+    e.preventDefault();
+    playerOneName = $('#GET-name-playerOne').val();
+    $playerOneForm.hide();
+    getPlayerTwoName();
+  }
+
+  function playerTwoNameSubmit(e){
+    e.preventDefault();
+    playerTwoName = $('#GET-name-playerTwo').val();
+    $playerTwoForm.hide();
+    console.log(playerTwoName);
+  }
 
 
 

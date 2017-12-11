@@ -50,6 +50,22 @@ h1 {
   display: none;
 }
 
+.stopButton {
+
+}
+
+.forms {
+  width: 700px;
+}
+
+.playerOneName {
+  display: none;
+}
+
+.playerTwoName {
+  display: none;
+}
+
 #activate {
   display: inline-block;
 }
@@ -60,4 +76,12 @@ h1 {
 
 #timerActivated {
   display: block;
+}
+
+#playerOneNameActivated {
+  display: inline-block;
+}
+
+#playerTwoNameActivated {
+  display: inline-block;
 }
