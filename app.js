@@ -63,6 +63,8 @@ $(() => {
   // MULTIPLAYER VARIABLES
   let playerOneName = null;
   let playerTwoName = null;
+  const playerTwoBoard = [];
+  const playerOneBoard = [];
 
   const $twoPlayerBtn = $('.multiplayerModeButton');
   const $playerOneForm = $('.playerOneName');
@@ -70,6 +72,7 @@ $(() => {
   const $playerTwoForm = $('.playerTwoName');
   const $playerTwoSubmitBtn = $('#playerTwoSubmit');
   const $instructionsBoard = $('.instructionsBoard');
+  const $selectButton = $('.selectButton');
 
 
 
@@ -269,8 +272,55 @@ $(() => {
   function playerOneSelect(){
     $instructionsBoard.show();
     $instructionsBoard.html(`${playerOneName}, please create the game for ${playerTwoName}.`);
+    $squares.on('click', selectSquare);
+    $selectButton.attr('id', 'submitButtonActivated');
+    $selectButton.on('click', findSelectedSquaresFirst);
   }
 
+  function selectSquare(e){
+    const squareId = $(e.target).attr('id');
+    toggleSelectedClass(squareId);
+  }
+
+  function toggleSelectedClass(squareId){
+    $(`#${squareId}`).toggleClass('selected');
+  }
+
+  function findSelectedSquaresFirst(){
+    const $selected = $('.selected');
+
+    for (let i = 0; i < $selected.length; i++){
+      playerTwoBoard.push($selected[i].id);
+    }
+    $selectButton.off('click', findSelectedSquaresFirst);
+    console.log(`player two's game: ${playerTwoBoard}`);
+    $squares.off('click', selectSquare);
+    const $selectedSquares = $('.selected');
+    $selectedSquares.removeClass('selected');
+    playerTwoSelect();
+  }
+
+  function playerTwoSelect(){
+    $instructionsBoard.show();
+    $instructionsBoard.html(`${playerTwoName}, please create the game for ${playerOneName}.`);
+    $squares.on('click', selectSquare);
+
+    $selectButton.on('click', findSelectedSquaresSecond);
+  }
+
+  function findSelectedSquaresSecond(){
+    const $selected = $('.selected');
+
+    for (let i = 0; i < $selected.length; i++){
+      playerOneBoard.push($selected[i].id);
+    }
+    $selectButton.off('click', findSelectedSquaresSecond);
+    console.log(`player one's game: ${playerOneBoard}`);
+    $squares.off('click', selectSquare);
+    const $selectedSquares = $('.selected');
+    $selectedSquares.removeClass('selected');
+
+  }
 
 
 });

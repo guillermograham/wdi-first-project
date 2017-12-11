@@ -71,6 +71,14 @@ h1 {
   width: 700px;
 }
 
+.selected.inner {
+  background-color: violet;
+}
+
+.selectButton {
+  display: none;
+}
+
 #activate {
   display: inline-block;
 }
@@ -88,5 +96,9 @@ h1 {
 }
 
 #playerTwoNameActivated {
+  display: inline-block;
+}
+
+#submitButtonActivated {
   display: inline-block;
 }
