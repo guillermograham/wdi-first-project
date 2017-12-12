@@ -1,7 +1,6 @@
 $(() => {
 
   const powers = {
-
     9: { top: 2, right: 10, bottom: 16, left: 8 },
     10: { top: 3, right: 11, bottom: 17, left: 9 },
     11: { top: 4, right: 12, bottom: 18, left: 10 },
@@ -31,7 +30,6 @@ $(() => {
     39: { top: 32, right: 40, bottom: 46, left: 38 },
     40: { top: 33, right: 41, bottom: 47, left: 39 },
     41: { top: 34, right: 42, bottom: 48, left: 40 }
-
   };
 
   let levelCount = null;
