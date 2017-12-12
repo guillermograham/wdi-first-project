@@ -260,16 +260,20 @@ $(() => {
 
   }
 
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
   function playerOneNameSubmit(e){
     e.preventDefault();
-    playerOneName = $('#GET-name-playerOne').val();
+    playerOneName = capitalizeFirstLetter($('#GET-name-playerOne').val());
     $playerOneForm.hide();
     getPlayerTwoName();
   }
 
   function playerTwoNameSubmit(e){
     e.preventDefault();
-    playerTwoName = $('#GET-name-playerTwo').val();
+    playerTwoName = capitalizeFirstLetter($('#GET-name-playerTwo').val());
     $playerTwoForm.hide();
     playerOneSelect();
   }
