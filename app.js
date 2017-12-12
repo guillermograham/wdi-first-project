@@ -1,7 +1,6 @@
 $(() => {
 
   const powers = {
-
     9: { top: 2, right: 10, bottom: 16, left: 8 },
     10: { top: 3, right: 11, bottom: 17, left: 9 },
     11: { top: 4, right: 12, bottom: 18, left: 10 },
@@ -31,7 +30,6 @@ $(() => {
     39: { top: 32, right: 40, bottom: 46, left: 38 },
     40: { top: 33, right: 41, bottom: 47, left: 39 },
     41: { top: 34, right: 42, bottom: 48, left: 40 }
-
   };
 
   let levelCount = null;
@@ -260,16 +258,20 @@ $(() => {
 
   }
 
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
   function playerOneNameSubmit(e){
     e.preventDefault();
-    playerOneName = $('#GET-name-playerOne').val();
+    playerOneName = capitalizeFirstLetter($('#GET-name-playerOne').val());
     $playerOneForm.hide();
     getPlayerTwoName();
   }
 
   function playerTwoNameSubmit(e){
     e.preventDefault();
-    playerTwoName = $('#GET-name-playerTwo').val();
+    playerTwoName = capitalizeFirstLetter($('#GET-name-playerTwo').val());
     $playerTwoForm.hide();
     playerOneSelect();
   }
@@ -293,16 +295,20 @@ $(() => {
 
   function findSelectedSquaresFirst(){
     const $selected = $('.selected');
-
-    for (let i = 0; i < $selected.length; i++){
-      playerTwoBoard.push($selected[i].id);
+    if ($selected.length < 3){
+      console.log('Please select at least 3 squares!');
+      return;
+    } else {
+      for (let i = 0; i < $selected.length; i++){
+        playerTwoBoard.push($selected[i].id);
+      }
+      $selectButton.off('click', findSelectedSquaresFirst);
+      console.log(`player two's game: ${playerTwoBoard}`);
+      $squares.off('click', selectSquare);
+      const $selectedSquares = $('.selected');
+      $selectedSquares.removeClass('selected');
+      playerTwoSelect();
     }
-    $selectButton.off('click', findSelectedSquaresFirst);
-    console.log(`player two's game: ${playerTwoBoard}`);
-    $squares.off('click', selectSquare);
-    const $selectedSquares = $('.selected');
-    $selectedSquares.removeClass('selected');
-    playerTwoSelect();
   }
 
   function playerTwoSelect(){
@@ -315,16 +321,20 @@ $(() => {
 
   function findSelectedSquaresSecond(){
     const $selected = $('.selected');
-
-    for (let i = 0; i < $selected.length; i++){
-      playerOneBoard.push($selected[i].id);
+    if ($selected.length < 3){
+      console.log('Please select at least 3 squares!');
+      return;
+    } else {
+      for (let i = 0; i < $selected.length; i++){
+        playerOneBoard.push($selected[i].id);
+      }
+      $selectButton.off('click', findSelectedSquaresSecond);
+      console.log(`player one's game: ${playerOneBoard}`);
+      $squares.off('click', selectSquare);
+      const $selectedSquares = $('.selected');
+      $selectedSquares.removeClass('selected');
+      playerOneReady();
     }
-    $selectButton.off('click', findSelectedSquaresSecond);
-    console.log(`player one's game: ${playerOneBoard}`);
-    $squares.off('click', selectSquare);
-    const $selectedSquares = $('.selected');
-    $selectedSquares.removeClass('selected');
-    playerOneReady();
   }
 
   function playerOneReady(){
