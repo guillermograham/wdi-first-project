@@ -142,6 +142,7 @@ h1 {
   width: 60%;
   border: 1px solid white;
   margin: 0 auto;
+  display: flex;
 }
 
 .left-side {
@@ -175,8 +176,8 @@ h1 {
 .grid {
   /*width: 700px;*/
   /*width: 466px;*/
-  width: 350px;
-  height: 350px;
+  width: 500px;
+  height: 500px;
   margin: 0 auto;
   padding: 0;
   list-style: none;
@@ -190,8 +191,8 @@ h1 {
 .grid li {
   /*width: 100px;
   height: 100px;*/
-  width: 66px;
-  height: 66px;
+  width: 95px;
+  height: 95px;
   /*float: left;*/
   margin: 0;
   padding: 0;
@@ -218,6 +219,41 @@ h1 {
   height: 2px;
   width: 2px;
   display: none;
+}
+
+/* RIGHT SIDE */
+.right-side{
+  width: 35%;
+}
+
+.game-buttons {
+  width: 200px;
+  list-style: none;
+  border: 1px solid white;
+  padding: 0;
+  margin: 0 auto;
+  margin-top: 150px;
+}
+
+.game-buttons li {
+  /*border: 1px solid white;*/
+  margin: 0 auto;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+.game-buttons li button {
+ font-size: 16px;
+ font-family: 'Martel Sans', sans-serif;
+ font-weight: bold;
+ text-align: center;
+ text-transform: uppercase;
+ width: 180px;
+ height: 30px;
+ padding: 14px 40px;
+ line-height: 40%;
+
+ border-radius: 5px;
 }
 
 #activate {
