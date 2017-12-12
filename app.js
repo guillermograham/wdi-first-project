@@ -55,14 +55,16 @@ $(() => {
   const $timer = $('.timer');
   let $minutes = $('#minutes');
   let $seconds = $('#seconds');
+  const $welcomeScreen = $('.welcome-screen');
+  const $onePlayerBtn = $('.singlePlayerModeButton');
 
 
   // MULTIPLAYER VARIABLES
   let playerOneName = null;
   let playerTwoName = null;
-  const playerTwoBoard = [];
-  const playerOneBoard = [];
-  const scores = [];
+  let playerTwoBoard = [];
+  let playerOneBoard = [];
+  let scores = [];
   let playerTurn = null;
   let winner = null;
 
@@ -78,8 +80,11 @@ $(() => {
   const $winner = $('.winner');
 
 
+  $onePlayerBtn.on('click', onePlayerMode);
 
-
+  function onePlayerMode(){
+    $welcomeScreen.hide();
+  }
 
   function getSquareId (e){
     const squareId = $(e.target).attr('id');
@@ -247,8 +252,34 @@ $(() => {
   // MULTIPLAYER MODE
 
   function getPlayerOneName() {
+    $startButton.hide();
+    $resetButton.hide();
+    $twoPlayerBtn.off('click', getPlayerOneName);
+    $welcomeScreen.hide();
+    $stopButton.on('click', stopMultiplayer);
     $playerOneForm.attr('id', 'playerOneNameActivated');
     $playerOneSubmitBtn.on('click', playerOneNameSubmit);
+  }
+
+  function stopMultiplayer(){
+
+    location.reload();
+    // $stopButton.off('click', stopMultiplayer);
+    // $twoPlayerBtn.on('click', getPlayerOneName);
+    // $playerOneForm.removeAttr('id', 'playerOneNameActivated');
+    // $playerTwoForm.removeAttr('id', 'playerTwoNameActivated');
+    // $instructionsBoard.hide();
+    // $welcomeScreen.show();
+    // $squares.off('click', selectSquare);
+    // const $selectedSquares = $('.selected');
+    // $selectedSquares.removeClass('selected');
+    // playerOneName = null;
+    // playerTwoName = null;
+    // playerTwoBoard = [];
+    // playerOneBoard = [];
+    // scores = [];
+    // playerTurn = null;
+    // winner = null;
   }
 
   function getPlayerTwoName() {
@@ -265,14 +296,14 @@ $(() => {
   function playerOneNameSubmit(e){
     e.preventDefault();
     playerOneName = capitalizeFirstLetter($('#GET-name-playerOne').val());
-    $playerOneForm.hide();
+    $playerOneForm.removeAttr('id', 'playerOneNameActivated')
     getPlayerTwoName();
   }
 
   function playerTwoNameSubmit(e){
     e.preventDefault();
     playerTwoName = capitalizeFirstLetter($('#GET-name-playerTwo').val());
-    $playerTwoForm.hide();
+    $playerTwoForm.removeAttr('id', 'playerTwoNameActivated');
     playerOneSelect();
   }
 

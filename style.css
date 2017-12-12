@@ -3,6 +3,12 @@ body {
   font-family: Arial, Helvetica, san-serif;
 }
 
+main {
+  background-color: #48392A;
+  overflow: hidden;
+  height: 1000px;
+}
+
 h1 {
   text-align: center;
 }
@@ -22,20 +28,47 @@ h1 {
   padding: 0;
   /*border: 1px solid black;*/
   box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.front-grid {
+  width: 310px;
+  height: 310px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+}
+
+.front-grid li {
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin: 0;
+  padding: 0;
+  border: 1px solid white;
+  box-sizing: border-box;
+  border-radius: 5px;
 }
 
 .inner {
-  border: 1px solid black;
+  border: 1px solid #48392A;
+  background-color: #E7DCDB;
+  color: #E7DCDB;
 }
 
 .on.inner {
-  background-color: yellow;
+  background-color: #FBF2C0;
+  color: #FBF2C0;
 }
 
 .edge {
-  background-color: white;
-  border: 1px solid white;
-  color: white;
+  background-color: #48392A;
+  border: 1px solid #48392A;
+  color: #48392A;
 }
 
 .nextLevelButton {
@@ -79,6 +112,67 @@ h1 {
   display: none;
 }
 
+/*WELCOME SCREEN*/
+
+.welcome-screen {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  color: #FBF2C0;
+}
+
+.welcome-screen-container{
+  height: 100%;
+  width: 60%;
+  border: 1px solid white;
+  margin: 0 auto;
+}
+
+.title {
+  margin-top: 80px;
+  font-family:  'Martel Sans', sans-serif;
+  text-transform: uppercase;
+}
+ .front-buttons {
+   width: 200px;
+   list-style: none;
+   /*border: 1px solid white;*/
+   padding: 0;
+   margin: 0 auto;
+   margin-top: 20px;
+ }
+
+ .front-buttons li {
+   /*border: 1px solid white;*/
+   margin: 0 auto;
+   padding: 0;
+   margin-bottom: 15px;
+ }
+
+.front-buttons li button {
+  font-size: 16px;
+  font-family: 'Martel Sans', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  width: 180px;
+  height: 30px;
+  padding: 14px 40px;
+  line-height: 40%;
+
+  border-radius: 5px;
+}
+
+.instructions {
+  font-family: 'Roboto', sans-serif;
+  margin-top: 20px;
+}
+
+
+.game-screen{
+  background-color: #48392A;
+}
+
 #activate {
   display: inline-block;
 }
@@ -101,4 +195,8 @@ h1 {
 
 #submitButtonActivated {
   display: inline-block;
+}
+
+#welcomeScreenHidden {
+  display: none;
 }
