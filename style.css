@@ -15,28 +15,7 @@ h1 {
 
 
 
-.front-grid {
-  width: 310px;
-  height: 310px;
-  margin: 0 auto;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
 
-}
-
-.front-grid li {
-  width: 100px;
-  height: 100px;
-  float: left;
-  margin: 0;
-  padding: 0;
-  border: 1px solid white;
-  box-sizing: border-box;
-  border-radius: 5px;
-}
 
 .nextLevelButton {
   display: none;
@@ -100,7 +79,40 @@ h1 {
   font-family:  'Martel Sans', sans-serif;
   text-transform: uppercase;
 }
- .front-buttons {
+
+.front-grid {
+  width: 310px;
+  height: 310px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+}
+
+.front-grid li {
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin: 0;
+  padding: 0;
+  border: 1px solid white;
+  box-sizing: border-box;
+  border-radius: 5px;
+  /*animation: blackToWhite 3s infinite;*/
+}
+
+.outside {
+  animation: blackToWhite 3s infinite;
+}
+
+.central {
+  animation: whiteToBlack 3s infinite;
+}
+
+.front-buttons {
    width: 200px;
    list-style: none;
    /*border: 1px solid white;*/
@@ -319,4 +331,34 @@ h1 {
 
 #welcomeScreenHidden {
   display: none;
+}
+
+@keyframes blackToWhite {
+  0% {
+    background-color: blue;
+  }
+  49% {
+    background-color: blue;
+  }
+  50% {
+    background-color: green;
+  }
+  100% {
+    background-color: green;
+  }
+}
+
+@keyframes whiteToBlack {
+  0% {
+    background-color: green;
+  }
+  49% {
+    background-color: green;
+  }
+  50% {
+    background-color: blue;
+  }
+  100% {
+    background-color: blue;
+  }
 }
