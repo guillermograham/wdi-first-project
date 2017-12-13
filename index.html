@@ -4,6 +4,7 @@
   <title>Lights Off!</title>
   <link rel="stylesheet" type="text/css" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Martel+Sans|Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script type="text/javascript" src="app.js"></script>
 </head>
@@ -13,15 +14,15 @@
       <div class="welcome-screen-container">
         <h1 class="title">Lights Off!</h1>
         <ul class="front-grid">
-          <li></li>
+          <li class="corner"></li>
           <li class="outside"></li>
-          <li></li>
+          <li class="corner"></li>
           <li class="outside"></li>
           <li class="central"></li>
           <li class="outside"></li>
-          <li></li>
+          <li class="corner"></li>
           <li class="outside"></li>
-          <li></li>
+          <li class="corner"></li>
         </ul>
         <ul class="front-buttons">
           <li><button class="singlePlayerModeButton">1 player</button></li>
@@ -88,8 +89,8 @@
       </div>
       <div class="right-side">
         <div class="information">
-          <div class="movesCounter">Moves: <span id="moveCount"></span></div>
-          <div class="timer">Time: <span id="minutes"></span>:<span id="seconds"></span></div>
+          <div class="movesCounter">Moves:<br><span id="moveCount"></span></div>
+          <div class="timer">Time:<br><span id="minutes"></span>:<span id="seconds"></span></div>
         </div>
         <ul class="game-buttons">
           <li><button id="startButton">Start</button></li>
@@ -103,14 +104,18 @@
       <div class="bottom">
         <div class="forms">
           <form class="playerOneName" method="get">
-          <label for="GET-name-playerOne">Player one, please enter your name.</label>
-          <input id="GET-name-playerOne" type="text" name="name">
-          <input id="playerOneSubmit" type="submit" value="Submit">
-        </form>
+            <label for="GET-name-playerOne">Player one, please enter your name.</label>
+            <div class="nameAndButton">
+              <input id="GET-name-playerOne" type="text" name="name">
+              <input id="playerOneSubmit" type="submit" value="Submit">
+            </div>
+          </form>
           <form class="playerTwoName" method="get">
-          <label for="GET-name-playerTwo">Player two, please enter your name.</label>
-          <input id="GET-name-playerTwo" type="text" name="name">
-          <input id="playerTwoSubmit" type="submit" value="Submit">
+            <label for="GET-name-playerTwo">Player two, please enter your name.</label>
+            <div class="nameAndButton">
+              <input id="GET-name-playerTwo" type="text" name="name">
+              <input id="playerTwoSubmit" type="submit" value="Submit">
+            </div>
         </form>
         </div>
         <div class="instructionsBoard">

@@ -63,8 +63,9 @@ h1 {
 .welcome-screen {
   height: 100%;
   width: 100%;
-  background-color: black;
-  color: #FBF2C0;
+  /*background-color: #535657;*/
+  background-color: #B3B5B4;
+  color: #D7F5FF;
 }
 
 .welcome-screen-container{
@@ -75,9 +76,11 @@ h1 {
 }
 
 .title {
-  margin-top: 80px;
-  font-family:  'Martel Sans', sans-serif;
+  margin-top: 20px;
+  font-family:  'Oswald', 'Martel Sans', sans-serif;
   text-transform: uppercase;
+  font-size: 100px;
+  margin-bottom: 20px;
 }
 
 .front-grid {
@@ -98,7 +101,7 @@ h1 {
   float: left;
   margin: 0;
   padding: 0;
-  border: 1px solid white;
+  /*border: 1px solid white;*/
   box-sizing: border-box;
   border-radius: 5px;
   /*animation: blackToWhite 3s infinite;*/
@@ -112,13 +115,17 @@ h1 {
   animation: whiteToBlack 3s infinite;
 }
 
+.corner {
+
+}
+
 .front-buttons {
    width: 200px;
    list-style: none;
    /*border: 1px solid white;*/
    padding: 0;
    margin: 0 auto;
-   margin-top: 20px;
+   margin-top: 50px;
  }
 
  .front-buttons li {
@@ -138,6 +145,9 @@ h1 {
   height: 30px;
   padding: 14px 40px;
   line-height: 40%;
+  background-color: #F484E9;
+  color: #D7F5FF;
+  border: none;
 
   border-radius: 5px;
 }
@@ -145,13 +155,18 @@ h1 {
 .instructions {
   font-family: 'Roboto', sans-serif;
   margin-top: 20px;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 50px;
 }
 
 /* GAME SCREEN */
 
 .game-screen {
   height: 100%;
-  width: 60%;
+  /*width: 60%;*/
+  max-width: 800px;
+  min-width: 600px;
   border: 1px solid white;
   margin: 0 auto;
   display: flex;
@@ -216,12 +231,12 @@ h1 {
 
 /* RIGHT SIDE */
 .right-side{
-  height: 600px;
+  height: 100%;
   width: 35%;
   background-color: blue:
   border: 1px solid white;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
   margin-top: 50px;
@@ -235,17 +250,19 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 0 auto;
+  font-family: 'Oswald', sans-serif;
 }
 
 .movesCounter {
-  width: 80%;
+  width: 60%;
   height: 40%;
   border: 1px solid white;
   background-color: yellow;
 }
 
 .timer {
-  width: 80%;
+  width: 60%;
   height: 40%;
   border: 1px solid white;
   background-color: blue;
@@ -293,7 +310,7 @@ h1 {
   height: 400px;
   width: 100%;
   border: 1px solid red;
-  clear: both;
+  background-color: red;
 }
 
 .playerOneName {
@@ -301,8 +318,17 @@ h1 {
   width: 100%;
 }
 
+.forms label {
+  text-align: left;
+}
+
 .playerTwoName {
   border: 1px solid white;
+}
+
+.nameAndButton {
+  display: flex;
+  width: 100%;
 }
 
 #activate {
@@ -318,11 +344,27 @@ h1 {
 }
 
 #playerOneNameActivated {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  /*display: block;*/
+  background color: green;
+  width: 100%
+}
+
+#GET-name-playerOne {
+  text-align: left;
 }
 
 #playerTwoNameActivated {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  /*display: block;*/
+  background color: green;
+  width: 100%
+}
+
+#GET-name-playerTwo {
+  text-align: left;
 }
 
 #submitButtonActivated {
@@ -333,32 +375,62 @@ h1 {
   display: none;
 }
 
+#playerOneSubmit {
+  font-size: 16px;
+  font-family: 'Martel Sans', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  width: 180px;
+  height: 30px;
+  padding: 14px 40px;
+  line-height: 40%;
+  border-radius: 5px;
+}
+
+#playerTwoSubmit {
+  font-size: 16px;
+  font-family: 'Martel Sans', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  width: 180px;
+  height: 30px;
+  padding: 14px 40px;
+  line-height: 40%;
+  border-radius: 5px;
+}
+
+#moveCount {
+
+}
+
 @keyframes blackToWhite {
   0% {
-    background-color: blue;
+    background-color: #D7F5FF;
   }
   49% {
-    background-color: blue;
+    background-color: #D7F5FF;
   }
   50% {
-    background-color: green;
+    background-color: #CCD5FF;
   }
   100% {
-    background-color: green;
+    background-color: #CCD5FF;
   }
 }
 
 @keyframes whiteToBlack {
   0% {
-    background-color: green;
+    background-color: #CCD5FF;
   }
   49% {
-    background-color: green;
+    background-color: #CCD5FF;
   }
   50% {
-    background-color: blue;
+    background-color: #D7F5FF;
   }
   100% {
-    background-color: blue;
+    background-color: #D7F5FF;
   }
 }
