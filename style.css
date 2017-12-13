@@ -4,7 +4,7 @@ body {
 }
 
 main {
-  background-color: #48392A;
+  background-color: black;
   overflow: hidden;
   height: 1000px;
 }
@@ -19,6 +19,8 @@ h1 {
 
 .nextLevelButton {
   display: none;
+  background-color: white;
+  color: black;
 }
 
 .movesCounter {
@@ -51,7 +53,8 @@ h1 {
 }
 
 .selected.inner {
-  background-color: violet;
+  /*background-color: violet;*/
+  background-color: white;
 }
 
 .selectButton {
@@ -64,8 +67,9 @@ h1 {
   height: 100%;
   width: 100%;
   /*background-color: #535657;*/
-  background-color: #B3B5B4;
-  color: #D7F5FF;
+  /*background-color: #B3B5B4;
+  color: #D7F5FF;*/
+  background-color: black;
 }
 
 .welcome-screen-container{
@@ -81,6 +85,7 @@ h1 {
   text-transform: uppercase;
   font-size: 100px;
   margin-bottom: 20px;
+  color: white;
 }
 
 .front-grid {
@@ -101,7 +106,7 @@ h1 {
   float: left;
   margin: 0;
   padding: 0;
-  /*border: 1px solid white;*/
+  border: 1px solid white;
   box-sizing: border-box;
   border-radius: 5px;
   /*animation: blackToWhite 3s infinite;*/
@@ -116,7 +121,7 @@ h1 {
 }
 
 .corner {
-
+  border: none;
 }
 
 .front-buttons {
@@ -145,15 +150,18 @@ h1 {
   height: 30px;
   padding: 14px 40px;
   line-height: 40%;
-  background-color: #F484E9;
-  color: #D7F5FF;
-  border: none;
+  /*background-color: #F484E9;
+  color: #D7F5FF;*/
+  background-color: black;
+  color: white;
+  border: 1px solid white;
 
   border-radius: 5px;
 }
 
 .instructions {
   font-family: 'Roboto', sans-serif;
+  color: white;
   margin-top: 20px;
   width: 60%;
   margin: 0 auto;
@@ -171,13 +179,14 @@ h1 {
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  background-color: #B3B5B4;
+  /*background-color: #B3B5B4;*/
+  background-color: black;
 }
 
 .left-side {
   height: 100%;
   width: 65%;
-  border: 1px solid white;
+  /*border: 1px solid white;*/
   box-sizing: border-box;
 }
 
@@ -189,7 +198,8 @@ h1 {
   margin: 0 auto;
   padding: 0;
   list-style: none;
-  background-color: yellow;
+  /*background-color: #B3B5B4;*/
+  background-color: black;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -211,14 +221,16 @@ h1 {
 }
 
 .inner {
-  border: 1px solid #48392A;
-  background-color: #E7DCDB;
-  color: #E7DCDB;
+  border: 1px solid white;
+  /*background-color: #D7F5FF;*/
+  background-color: black;
+  /*color: #D7F5FF;*/
 }
 
 .on.inner {
-  background-color: #FBF2C0;
-  color: #FBF2C0;
+  /*background-color: #6D88FF;
+  color: #6D88FF;*/
+  background-color: white;
 }
 
 .edge {
@@ -235,7 +247,7 @@ h1 {
   height: 100%;
   width: 35%;
   background-color: blue:
-  border: 1px solid white;
+  /*border: 1px solid white;*/
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -245,7 +257,7 @@ h1 {
 }
 
 .information {
-  border: 1px solid white;
+  /*border: 1px solid white;*/
   height: 40%;
   width: 80%;
   display: flex;
@@ -258,23 +270,29 @@ h1 {
 .movesCounter {
   width: 60%;
   height: 40%;
-  border: 1px solid white;
-  background-color: yellow;
+  /*border: 1px solid white;*/
+  /*background-color: #E3E4E3;*/
   border-radius: 3px;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
 }
 
 .timer {
   width: 60%;
   height: 40%;
-  border: 1px solid white;
-  background-color: blue;
+  /*border: 1px solid white;*/
+  /*background-color: #E3E4E3;*/
   border-radius: 3px;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
 }
 
 .game-buttons {
   width: 180px;
   list-style: none;
-  border: 1px solid white;
+  /*border: 1px solid white;*/
   padding: 0;
   margin: 0 auto;
   margin-top: 0;
@@ -298,6 +316,11 @@ h1 {
  padding: 14px 40px;
  line-height: 40%;
  border-radius: 5px;
+ /*background-color: #F484E9;
+ color: #D7F5FF;*/
+ background-color: black;
+ color: white;
+ border: 1px solid white;
 }
 
 .top{
@@ -312,17 +335,25 @@ h1 {
 .bottom {
   height: 400px;
   width: 100%;
-  border: 1px solid red;
-  background-color: red;
+  /*border: 1px solid red;*/
+  /*background-color: #686868;*/
+  background-color: black;
 }
 
 .playerOneName {
-  border: 1px solid white;
+  /*border: 1px solid white;*/
   width: 100%;
+}
+
+.forms {
+  color: #D7F5FF;
+  font-family: 'Oswald';
 }
 
 .forms label {
   text-align: left;
+  margin-bottom: 50px;
+  font-size: 30px;
 }
 
 .playerTwoName {
@@ -334,8 +365,41 @@ h1 {
   width: 100%;
 }
 
+.instructionsBoard {
+  background-color: black;
+  color: white;
+  text-align: left;
+  /*background-color: #686868;
+  color: #D7F5FF;*/
+  background-color: black;
+  color: white;
+  width: 80%;
+  font-family: 'Oswald';
+  font-size: 30px;
+}
+
+.scoreBoard {
+  background-color: black;
+  color: white;
+  text-align: left;
+  /*background-color: #686868;
+  color: #D7F5FF;*/
+  background-color: black;
+  color: white;
+  width: 80%;
+  font-family: 'Oswald';
+  font-size: 30px;
+}
+
 #activate {
   display: inline-block;
+  background-color: white;
+  color: black;
+  animation-name: pulse_animation;
+	animation-duration: 1000ms;
+	transform-origin:70% 70%;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
 }
 
 #movesCounterActivated {
@@ -356,6 +420,17 @@ h1 {
 
 #GET-name-playerOne {
   text-align: left;
+  /*background-color: #686868;
+  color: #D7F5FF;*/
+  background-color: black;
+  color: white;
+  border-style: none;
+  /*border-bottom: 5px solid #D7F5FF;*/
+  border-bottom: 2px solid white;
+  width: 300px;
+  font-family: 'Oswald';
+  outline: none;
+  font-size: 30px;
 }
 
 #playerTwoNameActivated {
@@ -368,6 +443,17 @@ h1 {
 
 #GET-name-playerTwo {
   text-align: left;
+  /*background-color: #686868;
+  color: #D7F5FF;*/
+  background-color: black;
+  color: white;
+  border-style: none;
+  /*border-bottom: 5px solid #D7F5FF;*/
+  border-bottom: 2px solid white;
+  width: 300px;
+  font-family: 'Oswald';
+  outline: none;
+  font-size: 30px;
 }
 
 #submitButtonActivated {
@@ -389,6 +475,9 @@ h1 {
   padding: 14px 40px;
   line-height: 40%;
   border-radius: 5px;
+  background-color: white;
+  color: black;
+  border: 1px solid white;
 }
 
 #playerTwoSubmit {
@@ -402,6 +491,9 @@ h1 {
   padding: 14px 40px;
   line-height: 40%;
   border-radius: 5px;
+  background-color: white;
+  color: black;
+  border: 1px solid white;
 }
 
 #moveCount {
@@ -419,6 +511,36 @@ h1 {
   font-weight: bold;
 }
 
+@keyframes blackToWhite {
+  0% {
+    background-color: black;
+  }
+  49% {
+    background-color: black;
+  }
+  50% {
+    background-color: white;
+  }
+  100% {
+    background-color: white;
+  }
+}
+
+@keyframes whiteToBlack {
+  0% {
+    background-color: white;
+  }
+  49% {
+    background-color: white;
+  }
+  50% {
+    background-color: black;
+  }
+  100% {
+    background-color: black;
+  }
+}
+/*
 @keyframes blackToWhite {
   0% {
     background-color: #D7F5FF;
@@ -447,4 +569,19 @@ h1 {
   100% {
     background-color: #D7F5FF;
   }
+}*/
+
+@keyframes pulse_animation {
+	0% { transform: scale(1); }
+	30% { transform: scale(1); }
+	40% { transform: scale(1.08); }
+	50% { transform: scale(1); }
+	60% { transform: scale(1); }
+	70% { transform: scale(1.05); }
+	80% { transform: scale(1); }
+	100% { transform: scale(1); }
+}
+
+input:focus {
+  outline: none;
 }
