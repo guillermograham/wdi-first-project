@@ -177,7 +177,7 @@ h1 {
   /*width: 60%;*/
   max-width: 800px;
   min-width: 600px;
-  border: 1px solid white;
+  /*border: 1px solid white;*/
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -340,6 +340,8 @@ h1 {
   /*border: 1px solid red;*/
   /*background-color: #686868;*/
   background-color: black;
+  border: 1px solid white;
+  border-top: none;
 }
 
 .playerOneName {
