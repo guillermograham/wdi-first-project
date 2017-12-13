@@ -411,6 +411,10 @@ h1 {
   display: inline-block;
 }
 
+#time {
+  font-size: 40px;
+}
+
 #timerActivated {
   display: block;
 }

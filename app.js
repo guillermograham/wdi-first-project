@@ -328,7 +328,7 @@ $(() => {
   function findSelectedSquaresFirst(){
     const $selected = $('.selected');
     if ($selected.length < 3){
-      console.log('Please select at least 3 squares!');
+      $instructionsBoard.text('Please select at least 3 squares!');
       return;
     } else {
       for (let i = 0; i < $selected.length; i++){
@@ -354,7 +354,7 @@ $(() => {
   function findSelectedSquaresSecond(){
     const $selected = $('.selected');
     if ($selected.length < 3){
-      console.log('Please select at least 3 squares!');
+      $instructionsBoard.text('Please select at least 3 squares!');
       return;
     } else {
       for (let i = 0; i < $selected.length; i++){
