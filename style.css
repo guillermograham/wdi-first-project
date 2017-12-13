@@ -275,11 +275,22 @@ h1 {
   display: flex;
   flex-wrap: wrap;
 }
+
+/* LOWER PART */
 .bottom {
   height: 400px;
   width: 100%;
   border: 1px solid red;
   clear: both;
+}
+
+.playerOneName {
+  border: 1px solid white;
+  width: 100%;
+}
+
+.playerTwoName {
+  border: 1px solid white;
 }
 
 #activate {
