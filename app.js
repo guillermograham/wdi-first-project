@@ -297,6 +297,7 @@ $(() => {
     e.preventDefault();
     playerOneName = capitalizeFirstLetter($('#GET-name-playerOne').val());
     $playerOneForm.removeAttr('id', 'playerOneNameActivated')
+
     getPlayerTwoName();
   }
 
