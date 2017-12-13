@@ -57,6 +57,8 @@ $(() => {
   let $seconds = $('#seconds');
   const $welcomeScreen = $('.welcome-screen');
   const $onePlayerBtn = $('.singlePlayerModeButton');
+  const $instructionsBtn = $('.instructionsButton');
+  const $instructions = $('.instructions');
 
 
   // MULTIPLAYER VARIABLES
@@ -243,9 +245,14 @@ $(() => {
     $stopButton.off('click', stop);
   }
 
+  function showInstructions() {
+    $instructions.addClass('showInstructions');
+  }
+
 
   $startButton.on('click', startUp);
   $twoPlayerBtn.on('click', getPlayerOneName);
+  $instructionsBtn.on('click', showInstructions);
 
 
 

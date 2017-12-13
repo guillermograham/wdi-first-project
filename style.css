@@ -166,8 +166,10 @@ h1 {
   width: 60%;
   margin: 0 auto;
   margin-top: 50px;
-  font-size: 20px;
+  font-size: 15px;
   line-height: 1.5;
+  text-transform: uppercase;
+  display: none;
 }
 
 /* GAME SCREEN */
@@ -406,6 +408,9 @@ h1 {
 	transform-origin:70% 70%;
 	animation-iteration-count: infinite;
 	animation-timing-function: linear;
+}
+.instructions.showInstructions {
+  display: block;
 }
 
 #activate {
