@@ -171,6 +171,7 @@ h1 {
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
+  background-color: #B3B5B4;
 }
 
 .left-side {
@@ -237,7 +238,7 @@ h1 {
   border: 1px solid white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   box-sizing: border-box;
   margin-top: 50px;
 
@@ -245,7 +246,7 @@ h1 {
 
 .information {
   border: 1px solid white;
-  height: 30%;
+  height: 40%;
   width: 80%;
   display: flex;
   flex-wrap: wrap;
@@ -259,6 +260,7 @@ h1 {
   height: 40%;
   border: 1px solid white;
   background-color: yellow;
+  border-radius: 3px;
 }
 
 .timer {
@@ -266,6 +268,7 @@ h1 {
   height: 40%;
   border: 1px solid white;
   background-color: blue;
+  border-radius: 3px;
 }
 
 .game-buttons {
@@ -402,7 +405,18 @@ h1 {
 }
 
 #moveCount {
+  font-size: 40px;
+  font-weight: bold;
+}
 
+#minutes {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+#seconds {
+  font-size: 40px;
+  font-weight: bold;
 }
 
 @keyframes blackToWhite {
