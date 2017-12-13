@@ -564,7 +564,7 @@ $(() => {
     if (scores[0] > scores[1]){
       winner = `${playerOneName}`;
     } else if (scores[0] < scores[1]){
-      winner = `${playerOneName}`;
+      winner = `${playerTwoName}`;
     } else {
       return $winner.html("It's a draw!");
     }

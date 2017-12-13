@@ -31,11 +31,9 @@
         </div>
     </div>
     <div class="game-screen">
+      <div class="top">
       <div class="left-side">
-        <div class="information">
-          <div class="movesCounter">Moves: <span id="moveCount"></span></div>
-          <div class="timer">Time: <span id="minutes"></span>:<span id="seconds"></span></div>
-        </div>
+
         <ul class="grid">
           <li class="edge" id="1">1</li>
           <li class="edge" id="2">2</li>
@@ -89,35 +87,41 @@
         </ul>
       </div>
       <div class="right-side">
+        <div class="information">
+          <div class="movesCounter">Moves: <span id="moveCount"></span></div>
+          <div class="timer">Time: <span id="minutes"></span>:<span id="seconds"></span></div>
+        </div>
         <ul class="game-buttons">
           <li><button id="startButton">Start</button></li>
           <li><button id="resetButton">Reset</button></li>
-          <li><button class="stopButton">Stop</button></li>
           <li><button class="selectButton">Submit</button></li>
+          <li><button class="stopButton">Stop</button></li>
           <li><button class="nextLevelButton">Next Level</button></li>
         </ul>
-
-      <div class="forms">
-        <form class="playerOneName" method="get">
+      </div>
+    </div>
+      <div class="bottom">
+        <div class="forms">
+          <form class="playerOneName" method="get">
           <label for="GET-name-playerOne">Player one, please enter your name.</label>
           <input id="GET-name-playerOne" type="text" name="name">
           <input id="playerOneSubmit" type="submit" value="Submit">
         </form>
-        <form class="playerTwoName" method="get">
+          <form class="playerTwoName" method="get">
           <label for="GET-name-playerTwo">Player two, please enter your name.</label>
           <input id="GET-name-playerTwo" type="text" name="name">
           <input id="playerTwoSubmit" type="submit" value="Submit">
         </form>
-      </div>
-      <div class="instructionsBoard">
+        </div>
+        <div class="instructionsBoard">
 
+        </div>
+        <div class="scoreBoard">
+          <div class="playerOneScore"></div>
+          <div class="playerTwoScore"></div>
+          <div class="winner"></div>
+        </div>
       </div>
-    <div class="scoreBoard">
-      <div class="playerOneScore"></div>
-      <div class="playerTwoScore"></div>
-      <div class="winner"></div>
-    </div>
-  </div>
   </main>
 </body>
 </html>
