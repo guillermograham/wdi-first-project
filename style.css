@@ -396,6 +396,16 @@ h1 {
   margin-left: 10px;
 }
 
+.selectButton.pulse {
+  background-color: white;
+  color: black;
+  animation-name: pulse_animation;
+	animation-duration: 1000ms;
+	transform-origin:70% 70%;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
 #activate {
   display: inline-block;
   background-color: white;

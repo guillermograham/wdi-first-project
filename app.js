@@ -371,12 +371,14 @@ $(() => {
 
   function playerOneReady(){
     $instructionsBoard.html(`${playerOneName}, are you ready?`);
+    $selectButton.addClass('pulse');
     $selectButton.html('Go!');
     $selectButton.on('click', firstGame);
   }
 
   function firstGame(){
     playerTurn = 0;
+    $selectButton.removeClass('pulse');
     $selectButton.off('click', firstGame);
     $instructionsBoard.hide();
     $selectButton.hide();
@@ -484,6 +486,7 @@ $(() => {
       stopCountdownTimer();
       $instructionsBoard.html(`${playerTwoName}, are you ready?`);
       $selectButton.html('Go!');
+      $selectButton.addClass('pulse');
       $instructionsBoard.show();
       $selectButton.show();
       $selectButton.on('click', secondGame);
@@ -494,6 +497,7 @@ $(() => {
   function secondGame(){
     playerTurn = 1;
     $instructionsBoard.hide();
+    $selectButton.removeClass('pulse');
     $selectButton.hide();
     numberMoves = 0;
     for (let i = 0; i < playerTwoBoard.length; i++){
