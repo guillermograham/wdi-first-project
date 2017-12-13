@@ -356,10 +356,11 @@ h1 {
   text-align: left;
   margin-bottom: 50px;
   font-size: 30px;
+  margin-left: 10px;
 }
 
 .playerTwoName {
-  border: 1px solid white;
+  /*border: 1px solid white;*/
 }
 
 .nameAndButton {
@@ -378,6 +379,7 @@ h1 {
   width: 80%;
   font-family: 'Oswald';
   font-size: 30px;
+  margin-left: 10px;
 }
 
 .scoreBoard {
@@ -391,6 +393,7 @@ h1 {
   width: 80%;
   font-family: 'Oswald';
   font-size: 30px;
+  margin-left: 10px;
 }
 
 #activate {
@@ -429,10 +432,12 @@ h1 {
   border-style: none;
   /*border-bottom: 5px solid #D7F5FF;*/
   border-bottom: 2px solid white;
-  width: 300px;
+  width: 250px;
   font-family: 'Oswald';
   outline: none;
   font-size: 30px;
+  margin-left: 10px;
+  margin-right: 20px;
 }
 
 #playerTwoNameActivated {
@@ -452,10 +457,12 @@ h1 {
   border-style: none;
   /*border-bottom: 5px solid #D7F5FF;*/
   border-bottom: 2px solid white;
-  width: 300px;
+  width: 250px;
   font-family: 'Oswald';
   outline: none;
   font-size: 30px;
+  margin-left: 10px;
+  margin-right: 20px;
 }
 
 #submitButtonActivated {
@@ -480,6 +487,7 @@ h1 {
   background-color: white;
   color: black;
   border: 1px solid white;
+  margin-top: 10px;
 }
 
 #playerTwoSubmit {
@@ -496,6 +504,7 @@ h1 {
   background-color: white;
   color: black;
   border: 1px solid white;
+  margin-top: 10px;
 }
 
 #moveCount {
@@ -586,4 +595,14 @@ h1 {
 
 input:focus {
   outline: none;
+}
+
+li button:hover {
+  background: white;
+  color: black;
+}
+
+#activate:hover{
+  background-color: black;
+  color: white;
 }
