@@ -638,6 +638,10 @@ button:focus {
     height: 700px;
   }
 
+  .game-screen {
+    min-width: 300px;
+  }
+
   .welcome-screen-container {
     width: 100%;
   }
@@ -674,6 +678,57 @@ button:focus {
   .instructions.showInstructions {
     width: 90%;
     margin-top: 10px;
+  }
+
+  .top {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  .left-side {
+    width: 100%;
+  }
+
+  .right-side {
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  .grid {
+    margin: 0;
+    margin-top: 5px;
+    width: 300px;
+    height: 300px;
+  }
+
+  .grid li {
+    width: 57px;
+    height: 57px;
+  }
+
+  .information {
+    width: 100%;
+    height: 80px;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+  }
+
+  .game-buttons {
+    margin-top: 10px;
+  }
+
+  .game-buttons li button {
+    margin-top: 0;
+  }
+
+  #movesCounterActivated {
+    height: 100%;
+    width: 40%;
+  }
+
+  #timerActivated {
+    height: 100%;
+    width: 40%;
   }
 
 }
