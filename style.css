@@ -125,7 +125,7 @@ h1 {
 }
 
 .front-buttons {
-   width: 200px;
+   /*width: 200px;*/
    list-style: none;
    /*border: 1px solid white;*/
    padding: 0;
