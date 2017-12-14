@@ -86,6 +86,7 @@ $(() => {
 
   function onePlayerMode(){
     $welcomeScreen.hide();
+    $stopButton.on('click', stop);
   }
 
   function getSquareId (e){
@@ -128,7 +129,6 @@ $(() => {
     totalMinutes = 0;
     totalSeconds = 0;
     $startButton.off('click', startUp);
-    $stopButton.on('click', stop);
     startTimer();
     squaresClickable();
     resetButtonActivate();
@@ -228,21 +228,23 @@ $(() => {
   }
 
   function stop(){
-    numberMoves = 0;
-    $movesNumber.html(numberMoves);
-    stopTimer();
-    deactivateResetButton();
-    $squares.off('click', getSquareId);
-    const $lightsOn = $('.on');
-    $lightsOn.removeClass('on');
-    totalMinutes = '00';
-    totalSeconds = '00';
-    $minutes.text(totalMinutes);
-    $seconds.text(totalSeconds);
-    clockTimer;
-    levelCount = null;
-    $startButton.on('click', startUp);
-    $stopButton.off('click', stop);
+    // numberMoves = 0;
+    // $movesNumber.html(numberMoves);
+    // stopTimer();
+    // deactivateResetButton();
+    // $squares.off('click', getSquareId);
+    // const $lightsOn = $('.on');
+    // $lightsOn.removeClass('on');
+    // totalMinutes = '00';
+    // totalSeconds = '00';
+    // $minutes.text(totalMinutes);
+    // $seconds.text(totalSeconds);
+    // clockTimer;
+    // levelCount = null;
+    // $startButton.on('click', startUp);
+    // $stopButton.off('click', stop);
+
+    location.reload();
   }
 
   function showInstructions() {
