@@ -722,6 +722,7 @@ button:focus {
     height: 40px;
     font-size: 20px;
     border: 1px solid white;
+    padding-top: 18px;
   }
 
   .instructions.showInstructions {
