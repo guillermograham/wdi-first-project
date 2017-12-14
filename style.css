@@ -631,3 +631,49 @@ li button:hover {
 button:focus {
   outline: none;
 }
+
+@media only screen and (max-width: 700px) {
+
+  body {
+    height: 700px;
+  }
+
+  .welcome-screen-container {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 65px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .front-grid {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 248px;
+    width: 248px;
+  }
+
+  .front-grid li {
+    width: 80px;
+    height: 80px;
+  }
+
+  .front-buttons {
+    margin-top: 15px;
+  }
+
+  .front-buttons li button {
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+    border: 2px solid white;
+  }
+
+  .instructions.showInstructions {
+    width: 90%;
+    margin-top: 10px;
+  }
+
+}
