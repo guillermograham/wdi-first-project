@@ -672,7 +672,7 @@ button:focus {
     width: 200px;
     height: 40px;
     font-size: 20px;
-    border: 2px solid white;
+    border: 1px solid white;
   }
 
   .instructions.showInstructions {
@@ -724,6 +724,19 @@ button:focus {
     margin-top: 0;
   }
 
+  .playerOneName label {
+    font-size; 20px;
+  }
+
+  .scoreBoard {
+    font-size: 25px;
+  }
+
+  .forms label {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
   #movesCounterActivated {
     height: 100%;
     width: 40%;
@@ -732,6 +745,40 @@ button:focus {
   #timerActivated {
     height: 100%;
     width: 40%;
+  }
+
+  #GET-name-playerOne {
+    width: 120px;
+    margin-right: 10px;
+  }
+
+  #playerOneSubmit {
+    width: 150px;
+  }
+
+  #GET-name-playerTwo {
+    width: 120px;
+    margin-right: 10px;
+  }
+
+  #playerTwoSubmit {
+    width: 150px;
+  }
+
+  #moveCount {
+    font-size: 35px;
+  }
+
+  #minutes {
+    font-size: 35px;
+  }
+
+  #time {
+    font-size: 35px;
+  }
+
+  #seconds {
+    font-size: 35px;
   }
 
 }
