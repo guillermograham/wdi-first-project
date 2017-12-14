@@ -82,6 +82,7 @@ $(() => {
   const $playerOneScoreboard = $('.playerOneScore');
   const $playerTwoScoreboard = $('.playerTwoScore');
   const $winner = $('.winner');
+  const $playerTwoNameForm = $('#GET-name-playerTwo');
 
 
   $onePlayerBtn.on('click', onePlayerMode);
@@ -246,7 +247,6 @@ $(() => {
     // levelCount = null;
     // $startButton.on('click', startUp);
     // $stopButton.off('click', stop);
-
     location.reload();
   }
 
@@ -274,7 +274,6 @@ $(() => {
   }
 
   function stopMultiplayer(){
-
     location.reload();
     // $stopButton.off('click', stopMultiplayer);
     // $twoPlayerBtn.on('click', getPlayerOneName);
@@ -296,9 +295,8 @@ $(() => {
 
   function getPlayerTwoName() {
     $playerTwoForm.attr('id', 'playerTwoNameActivated');
+    $playerTwoNameForm.focus();
     $playerTwoSubmitBtn.on('click', playerTwoNameSubmit);
-
-
   }
 
   function capitalizeFirstLetter(string) {
