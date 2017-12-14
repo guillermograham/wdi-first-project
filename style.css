@@ -80,17 +80,17 @@ h1 {
 }
 
 .title {
-  margin-top: 20px;
+  margin-top: 10px;
   font-family:  'Oswald', 'Martel Sans', sans-serif;
   text-transform: uppercase;
   font-size: 100px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   color: white;
 }
 
 .front-grid {
-  width: 310px;
-  height: 310px;
+  width: 248px;
+  height: 248px;
   margin: 0 auto;
   padding: 0;
   list-style: none;
@@ -101,8 +101,8 @@ h1 {
 }
 
 .front-grid li {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   float: left;
   margin: 0;
   padding: 0;
@@ -130,7 +130,7 @@ h1 {
    /*border: 1px solid white;*/
    padding: 0;
    margin: 0 auto;
-   margin-top: 50px;
+   margin-top: 30px;
  }
 
  .front-buttons li {
@@ -146,7 +146,7 @@ h1 {
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
-  width: 180px;
+  width: 150px;
   height: 30px;
   padding: 14px;
   line-height: 40%;
@@ -632,7 +632,7 @@ button:focus {
   outline: none;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 960px) {
 
   .welcome-screen-container {
     width: 100%;
@@ -644,14 +644,14 @@ button:focus {
   }
 
   .front-grid {
-    height: 334px;
-    width: 334px;
+    height: 248px;
+    width: 248px;
     margin-top: 20px;
   }
 
   .front-grid li {
-    height: 108px;
-    width: 108px;
+    height: 80px;
+    width: 80px;
   }
 }
 
