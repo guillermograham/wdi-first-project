@@ -683,19 +683,22 @@ button:focus {
   .top {
     flex-direction: column;
     flex-wrap: nowrap;
+    height: auto;
   }
 
   .left-side {
     width: 100%;
+    height: auto;
   }
 
   .right-side {
     width: 100%;
     margin-top: 5px;
+    height: auto;
   }
 
   .grid {
-    margin: 0;
+    margin: 0 auto;
     margin-top: 5px;
     width: 300px;
     height: 300px;
