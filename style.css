@@ -639,26 +639,26 @@ button:focus {
   }
 
   .title {
-    margin-top: 60px;
-    font-size: 120px;
+    margin-top: 20px;
+    font-size: 90px;
   }
 
   .front-grid {
-    height: 372px;
-    width: 372px;
-    margin-top: 60px;
+    height: 334px;
+    width: 334px;
+    margin-top: 20px;
   }
 
   .front-grid li {
-    height: 120px;
-    width: 120px;
+    height: 108px;
+    width: 108px;
   }
 }
 
   .front-buttons li button {
-    height: 40px;
-    width: 280px;
-    font-size: 25px;
+    height: 35px;
+    width: 250px;
+    font-size: 20px;
   }
 
   .instructions {
