@@ -59,6 +59,8 @@ $(() => {
   const $onePlayerBtn = $('.singlePlayerModeButton');
   const $instructionsBtn = $('.instructionsButton');
   const $instructions = $('.instructions');
+  const $moveSound = $('.moveSound').get(0);
+  const $errorSound = $('.errorSound').get(0);
 
 
   // MULTIPLAYER VARIABLES
@@ -111,6 +113,7 @@ $(() => {
     $(`#${right}`).toggleClass('on');
     $(`#${bottom}`).toggleClass('on');
     $(`#${left}`).toggleClass('on');
+    $moveSound.play();
     checkNumber();
   }
 
@@ -338,6 +341,7 @@ $(() => {
     const $selected = $('.selected');
     if ($selected.length < 3){
       $instructionsBoard.text('Please select at least 3 squares!');
+      $errorSound.play();
       return;
     } else {
       for (let i = 0; i < $selected.length; i++){
@@ -364,6 +368,7 @@ $(() => {
     const $selected = $('.selected');
     if ($selected.length < 3){
       $instructionsBoard.text('Please select at least 3 squares!');
+      $errorSound.play();
       return;
     } else {
       for (let i = 0; i < $selected.length; i++){
@@ -465,6 +470,7 @@ $(() => {
     numberMoves++;
     getNeighboursMulti(squareId);
     $movesNumber.html(numberMoves);
+    $moveSound.play();
   }
 
   function getNeighboursMulti (current){
@@ -537,6 +543,7 @@ $(() => {
     numberMoves++;
     getNeighboursMultiSecondGame(squareId);
     $movesNumber.html(numberMoves);
+    $moveSound.play();
   }
 
   function getNeighboursMultiSecondGame (current){
