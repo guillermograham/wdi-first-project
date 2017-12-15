@@ -253,7 +253,7 @@ $(() => {
   }
 
   function showInstructions() {
-    $instructions.addClass('showInstructions');
+    $instructions.toggleClass('showInstructions');
   }
 
 
